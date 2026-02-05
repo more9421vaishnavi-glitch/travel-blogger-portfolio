@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | My Travel Blog</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+  
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      background: black;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .modal span {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">Explore India</a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+
+    <li class="dropdown">
+      <a href="#">India Special ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="india-food.html">Travel & Food</a></li>
+        <li><a href="historical-places.html">Historical Places</a></li>
+        <li><a href="indian-culture.html">Indian Culture</a></li>
+      </ul>
+    </li>
+
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+  <section class="gallery">
+    <img src="images/1.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/2.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/3.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/4.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/5.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/6.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/7.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/8.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/9.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/10.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/11.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/12.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/13.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/14.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/15.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/16.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/17.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/18.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/19.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/20.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/21.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/22.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/23.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/24.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/25.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/26.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/27.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/28.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/29.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/30.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/31.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/32.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/33.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/34.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/35.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/36.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/37.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/38.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/39.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/40.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/41.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/42.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/43.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/44.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/45.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/46.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/47.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/48.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/49.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/50.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/51.jpg" alt="Travel Image" onclick="openModal(this)">
+    <img src="images/52.jpg" alt="Travel Image" onclick="openModal(this)">
+    
+  </section>
+  <div class="modal" id="imgModal">
+   <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImg" src="" alt="Full Image"/>
+  </div>
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+
+    function openModal(img) {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
+
+
+    

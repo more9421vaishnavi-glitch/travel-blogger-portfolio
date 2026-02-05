@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Explore India</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("bWD5TrbrN7uG9sy6i"); 
+    })();
+  </script>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">Explore India</a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+
+    <li class="dropdown">
+      <a href="#">India Special ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="india-food.html">Travel & Food</a></li>
+        <li><a href="historical-places.html">Historical Places</a></li>
+        <li><a href="indian-culture.html">Indian Culture</a></li>
+      </ul>
+    </li>
+
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="from_name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="reply_to" placeholder="Enter your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e) { e.preventDefault();
+      emailjs.sendForm("service_e8l147e", "template_f1w5su7", this)
+        .then(function() {
+          alert("Message Sent Successfully!");
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          alert(" Failed to send message. Please try again.");
+          console.log("Error:", error);
+        });
+    });
+  </script>
+
+   <script src="js/script.js"></script> 
+</body>
+</html>
+    

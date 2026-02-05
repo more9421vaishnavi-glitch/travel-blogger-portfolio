@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flavors Of India</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="india-food Page">
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">Explore India</a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+
+    <li class="dropdown">
+      <a href="#">India Special ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="india-food.html">Travel & Food</a></li>
+        <li><a href="historical-places.html">Historical Places</a></li>
+        <li><a href="indian-culture.html">Indian Culture</a></li>
+      </ul>
+    </li>
+
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+  <h2 class="indiafood-heading">Flavors Of India</h2>
+<div class="indiafood-section">
+    <div class="indiafood-card" onclick="openFoodModal(0)">
+      <img src="images/biryani.jpg" alt="Biryani" />
+      <h3>Biryani</h3>
+      <p>Hyderabad</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(1)">
+      <img src="images/butter.jpg" alt="Butter Chicken" />
+      <h3>Butter Chicken</h3>
+      <p>Delhi/Punjab</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(2)">
+      <img src="images/chole.jpg" alt="Chole Bhature" />
+      <h3>Chole Bhature</h3>
+      <p>Delhi</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(3)">
+      <img src="images/dhokala.jpg" alt="Dhokala" />
+      <h3>Dhokala</h3>
+      <p>Gujarat</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(4)">
+      <img src="images/dosa.jpg" alt="Dosa" />
+      <h3>Dosa</h3>
+      <p>Tamilnadu</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(5)">
+      <img src="images/litti.jpg" alt="Litti Chokha" />
+      <h3>Litti Chokha</h3>
+      <p>Bihar</p>
+    </div>
+     <div class="indiafood-card" onclick="openFoodModal(6)">
+      <img src="images/malpua.jpg" alt="Malpua" />
+      <h3>Malpua</h3>
+      <p>Odisa</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(7)">
+      <img src="images/pavbhaji.jpg" alt="Pavbhaji" />
+      <h3>Pavbhaji</h3>
+      <p>Mumbai</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(8)">
+      <img src="images/poha.jpg" alt="Poha" />
+      <h3>Poha</h3>
+      <p>Madhyapradesh/Maharashtra</p>
+    </div>
+    <div class="indiafood-card" onclick="openFoodModal(9)">
+      <img src="images/rasgulla.jpg" alt="Rasgulla" />
+      <h3>Rasgulla</h3>
+      <p>Kolakatta</p>
+    </div>
+      <div class="indiafood-card" onclick="openFoodModal(10)">
+      <img src="images/vada.jpg" alt="Vada Pav" />
+      <h3>Vada Pav</h3>
+      <p>Mumbai</p>
+      </div>
+      <div class="indiafood-card" onclick="openFoodModal(11)">
+      <img src="images/idali.jpg" alt="Idali" />
+      <h3>Idali</h3>
+      <p>Tamilnadu</p>
+      </div>
+      <div class="indiafood-card" onclick="openFoodModal(12)">
+      <img src="images/puranpoli.jpg" alt="Puranpoli" />
+      <h3>Puranpoli</h3>
+      <p>Maharashtra</p>
+      </div>
+      <div class="indiafood-card" onclick="openFoodModal(13)">
+      <img src="images/besanbhakari.jpg" alt="Besan-bhakari" />
+      <h3>Besan-bhakari</h3>
+      <p>Maharashtra</p>
+      </div>
+      <div class="indiafood-card" onclick="openFoodModal(14)">
+      <img src="images/panipuri.jpg" alt="Panipuri" />
+      <h3>Panipuri</h3>
+      <p>Maharashtra</p>
+      </div>
+      <div class="indiafood-card" onclick="openFoodModal(15)">
+      <img src="images/bhel.jpg" alt="Bhel" />
+      <h3>Bhel</h3>
+      <p>Maharashtra</p>
+      </div>
+    </div>
+  </body>
+    <!-- Modal -->
+  <div class="modal" id="indiafoodModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeFoodModal()">&times;</span>
+      <img id="modalImg" src="" alt="India Food" />
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+ <script>
+const indiafood = [
+      {
+    title: "Biryani",
+    img: "images/biryani.jpg",
+    text: "Hyderabadi Biryani is a world-famous dish from Hyderabad, known for its rich aroma, royal taste, and unique cooking style. Made with basmati rice, marinated meat (usually chicken or mutton), and a blend of traditional spices, it is slow-cooked using the dum method. Garnished with fried onions and saffron, Hyderabadi Biryani is a true delight and a proud specialty of Hyderabadi cuisine. "
+  },
+  {
+    title: "Butter Chicken",
+    img: "images/butter.jpg",
+    text: "Butter Chicken is a creamy, flavorful dish from Delhi and Punjab, made by simmering tandoori chicken in a rich tomato-based gravy with butter, cream, and aromatic spices."
+   },
+
+ {
+    title: "Chole Bhature",
+    img: "images/chole.jpg",
+    text: "Chole Bhature is a famous and much-loved dish from Delhi, known for its rich, spicy flavor and hearty serving. It includes spicy chickpea curry (chole) paired with deep-fried, fluffy bread (bhature). Often served with onions, pickles, and yogurt, Chole Bhature is a popular breakfast and street food that reflects the bold and vibrant taste of Delhi’s cuisine."
+  },
+ {
+    title: "Dhokala",
+    img: "images/dhokala.jpg",
+    text: " Dhokla is a famous Gujarati delicacy known for its light, fluffy texture and unique sweet-tangy flavor. Made from fermented gram flour and steamed to perfection, it reflects the healthy and flavorful essence of Gujarati cuisine. Often served with green chutney, dhokla is enjoyed as a snack, breakfast, or festive dish, making it a true specialty of Gujarat."
+  },
+  
+  {
+    title: "Dosa ",
+    img: "images/dosa.jpg",
+    text: "Dosa are classic South Indian breakfast dishes from Tamil Nadu. Dosa is a crispy rice-lentil crepe, while idli is a soft steamed rice cake, both typically served with chutneys and sambar."
+  },
+  {
+    title: "Litti Chokha",
+    img: "images/litti.jpg",
+    text: "Litti Chokha is a traditional and iconic dish from Bihar, known for its earthy flavors and wholesome ingredients. Litti is a round wheat ball stuffed with spiced sattu (roasted gram flour), roasted over fire or baked, and served with chokha—a smoky mashed mix of roasted eggplant, tomato, and potato. This rustic and nutritious dish is a true reflection of Bihari cuisine."
+  },
+  {
+    title: "Malpua",
+    img: "images/malpua.jpg",
+    text:" Malpua is a traditional sweet dish popular in Punjab, especially during festivals and special occasions. It is a deep-fried pancake made from a batter of flour, milk, and sugar, often flavored with cardamom and fennel. After frying, it's soaked in sugar syrup and sometimes topped with dry fruits. Crispy on the edges and soft inside, Malpua is a rich and festive Punjabi treat."
+  },
+  {
+    title: "Pav Bhaji",
+    img: "images/pavbhaji.jpg",
+    text: " Pav Bhaji is a famous street food from Mumbai and a beloved specialty of Maharashtra. It consists of a spicy, mashed vegetable curry (bhaji) served with butter-toasted bread rolls (pav). Garnished with onions, lemon, and a dollop of butter, Pav Bhaji is a flavorful and filling dish enjoyed by people of all ages across India."
+  },
+  {
+    title: "Poha",
+    img: "images/poha.jpg",
+    text: "Poha is a light and delicious breakfast dish popular in both Madhya Pradesh and Maharashtra. Made from flattened rice, it's cooked with onions, mustard seeds, turmeric, green chilies, and garnished with lemon and coriander. In Madhya Pradesh, especially Indore, Poha is often served with sev for a crunchy twist, while in Maharashtra, it’s a common household favorite. Its simple yet flavorful taste makes Poha a much-loved regional specialty."
+  },
+   {
+    title: "Rasgulla",
+    img: "images/rasgulla.jpg",
+    text: "Rasgulla & Sandesh are two beloved Bengali sweets made from chhena (paneer). Rasgulla is soft and spongy soaked in syrup, while Sandesh is a flavored milk-based dessert."
+  },
+  {
+    title: "Vada Pav",
+    img: "images/vada.jpg",
+    text: " Vada Pav is a popular street food and a beloved specialty of Maharashtra, especially Mumbai. It consists of a spicy potato fritter (vada) placed inside a soft bun (pav), served with chutneys and fried green chili. Simple yet flavorful, Vada Pav is often called the “Indian burger” and is a go-to snack for people on the move."
+  },
+  {
+    title: "Idali",
+    img: "images/idali.jpg",
+    text: "Idli is a staple and beloved breakfast dish from Tamil Nadu, known for its soft, fluffy texture and lightness. Made by steaming a fermented batter of rice and urad dal (black gram), idlis are healthy, easy to digest, and often served with coconut chutney and sambar. This simple yet nourishing dish reflects the essence of Tamil Nadu’s traditional cuisine."
+  },
+  {
+   title: "Puranpoli",
+    img: "images/puranpoli.jpg",
+    text: "Puranpoli is a traditional Indian sweet flatbread made by stuffing a soft wheat dough with a sweet filling of jaggery (gur) and spiced chana dal (split Bengal gram). Popular in Maharashtra, Gujarat, and South India, puranpoli is especially prepared during festivals like Holi, Ganesh Chaturthi, and Diwali. The outer layer is gently rolled and roasted on a hot griddle with ghee, giving it a golden, flaky texture, while the inside remains soft and rich with aromatic sweetness. This festive delicacy reflects India’s rich culinary heritage and the comforting flavors of home-cooked celebrations."
+  },
+  {
+   title: "Besan-bhakari",
+    img: "images/besanbhakari.jpg",
+    text: "Besan Bhakri is a simple and wholesome Maharashtrian dish made with gram flour (besan) cooked with spices like turmeric, mustard seeds, and green chilies, forming a soft curry known as pithla. It is traditionally paired with bhakri, a thick flatbread made from jowar or bajra flour. This rural comfort food is quick to make, highly nutritious, and loved for its earthy flavor and satisfying texture."
+  },
+  {
+   title: "Panipuri",
+    img: "images/panipuri.jpg",
+    text: "Pani Puri is a beloved Indian street food made of crispy, hollow puris filled with a spicy mix of mashed potatoes or chickpeas, tangy tamarind water, mint chutney, and flavored spices. Each puri bursts with bold, refreshing flavors, offering a mix of crunch, spice, and tang in every bite. Known by different names across India like golgappa, phuchka, or gupchup, pani puri is more than a snack—it's a fun and flavorful experience enjoyed by people of all ages."
+  },
+{
+   title: "Bhel",
+    img: "images/bhel.jpg",
+    text: "Bhel is a popular Indian street snack made by mixing puffed rice with chopped onions, tomatoes, green chilies, coriander, sev (crunchy gram flour noodles), and a tangy blend of tamarind and green chutneys. Known for its sweet, spicy, and tangy flavors, bhel is a light yet flavorful snack enjoyed across India, especially in Maharashtra and Gujarat. It's quick to prepare, refreshing, and best enjoyed immediately for its perfect crunchy texture."
+  },
+]
+    function openFoodModal(index) {
+      document.getElementById('modalImg').src = indiafood[index].img;
+      document.getElementById('modalTitle').textContent = indiafood[index].title;
+      document.getElementById('modalText').textContent = indiafood[index].text;
+      document.getElementById('indiafoodModal').style.display = 'flex';
+    }
+
+    function closeFoodModal() {
+      document.getElementById('indiafoodModal').style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+      if (event.target.id === "indiafoodModal") {
+        closeFoodModal();
+      }
+    };
+
+  </script>
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      nav.classList.toggle("active");
+    });
+  }
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        this.parentElement.classList.toggle("open");
+      }
+    });
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1024 && nav) {
+      nav.classList.remove("active");
+      document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+    }
+  });
+</script>
+</body>
+</html>

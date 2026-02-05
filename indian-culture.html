@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Words That Define India</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('images/indian-culture.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .heading h1 {
+      font-size: 36px;
+      font-weight: bold;
+      color: #000;
+      background: rgba(255, 204, 0, 0.5); 
+      display: inline-block;    
+      padding: 15px 25px;        
+      border-radius: 12px;       
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin-top: 80px;   
+      margin-bottom: 40px; 
+      text-align: center;
+    }
+
+    /* Long Quote Cards */
+    .quote-container {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
+    }
+    .quote-card {
+      background: rgba(255, 204, 0, 0.5) ; 
+      backdrop-filter: blur(8px);         
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-shadow: black;
+      color: black;  
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+    }
+
+    .quote-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      background: rgba(255, 215, 0, 0.2); 
+    }
+    .modal-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .modal-card {
+      background: transparent;
+      backdrop-filter: blur(8px);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+   .modal-card:hover {
+      transform: translateY(-8px);
+      box-shadow: lightskyblue ;
+      background: rgba(255, 215, 0, 0.12);
+    }
+    .modal-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: lightblue;
+    }
+
+    .modal-card h4 {
+      margin: 8px 0;
+      font-size: 18px;
+      color: #FFD700;
+      font-weight: 600;
+    }
+    .modal-card p {
+      font-size: 15px;
+      color: black;
+      line-height: 1.4;
+    }
+    #modalTitle {
+    background: rgba(255, 215, 0, 0.7); 
+    color: black;
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0 auto 10px auto;
+    }
+     #modalDesc {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: block;
+    width: fit-content;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html">Explore India</a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+
+    <li class="dropdown">
+      <a href="#">India Special ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="india-food.html">Travel & Food</a></li>
+        <li><a href="historical-places.html">Historical Places</a></li>
+        <li><a href="indian-culture.html">Indian Culture</a></li>
+      </ul>
+    </li>
+
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+ <section class="heading">
+    <h1>A Nation Draped in Heritage, Dancing in Rhythm, Singing in Soul</h1>
+  </section>
+  <section class="quote-container">
+    <div class="quote-card" onclick="openCultureModal('Traditional Clothes')">
+      "Fabric of a Million Stories"
+    </div>
+    <div class="quote-card" onclick="openCultureModal('Traditional Dance')">
+      "When Feet Speak, Cultures Listen"
+    </div>
+    <div class="quote-card" onclick="openCultureModal('Music of India')">
+      "Strings of Emotion, Beats of Time"
+    </div>
+    <div class="quote-card" onclick="openCultureModal('Arts of India')">
+      "Walls that Whisper History"
+    </div>
+    <div class="quote-card" onclick="openCultureModal('Indian Culture')">
+      "India — A Living Culture"
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <div class="modal-cards" id="modalCards"></div>
+    </div>
+  </div>
+  <script>
+    function openCultureModal(type) {
+      let title = "";
+      let desc = "";
+      let cards = "";
+
+      if(type === "Traditional Clothes") {
+        title = "Traditional Clothes";
+        desc = "Heritage in Every Thread";
+        cards = `
+          <div class="modal-card"><img src="images/pashmina.jpg"><h4>Jammu & Kashmir-Pashmina Shawl</h4><p> Soft Kashmiri woolen shawl of luxury.</p></div>
+          <div class="modal-card"><img src="images/salwar.jpg"><h4>Punjab-Phulkari & Salwar Kameez</h4><p> Phulkari is colorful embroidery, Salwar Kameez is daily traditional wear.</p></div>
+          <div class="modal-card"><img src="images/himachal.jpg"><h4> Himachal Pradesh– Chamba Rumal & Woolen Attire</h4><p>Chamba Rumal shows fine embroidery, woolen attire protects in cold. </p></div>
+          <div class="modal-card"><img src="images/uttarpradesh.jpg"><h4>Uttar Pradesh – Banarasi Saree  </h4><p>Banarasi Saree is rich silk with gold and silver designs</p></div>
+          <div class="modal-card"><img src="images/rajasthan.jpg"><h4> Rajasthan – Bandhani & Ghagra Choli</h4><p>Bandhani is bright tie-dye, Ghagra Choli is festive desert attire. </p></div>
+          <div class="modal-card"><img src="images/gujarat.jpg"><h4>Gujarat – Patola Saree & Chaniya Choli </h4><p> Patola Saree uses double ikat, Chaniya Choli shines during Navratri Garba.</p></div>
+          <div class="modal-card"><img src="images/maharashtra.jpg"><h4>Maharashtra – Nauvari Saree </h4><p> Nauvari Saree is a nine-yard dhoti-style drape of women.</p></div>
+          <div class="modal-card"><img src="images/uttarakhand.jpg"><h4>Uttarakhand – Ghagri & Woolen Shawls </h4><p>Long skirt with protective woolen wear. </p></div>
+          <div class="modal-card"><img src="images/madhyapradesh.jpg"><h4> Madhya Pradesh – Maheshwari & Chanderi Saree</h4><p> Lightweight handwoven sarees with zari work.</p></div>
+          <div class="modal-card"><img src="images/karnatak.jpg"><h4>Karnataka – Mysore Silk Saree </h4><p>Smooth silk saree with rich zari. </p></div>
+          <div class="modal-card"><img src="images/west.jpg"><h4> West Bengal – Tant & Baluchari Saree </h4><p>Cotton weave saree with mythological designs. </p></div>
+          <div class="modal-card"><img src="images/goa1.jpg"><h4> Goa – Kunbi Saree</h4><p>Traditional red-checked saree of Kunbi women. </p></div>
+        `;
+      }
+      else if(type === "Traditional Dance") {
+        title = "Traditional Dance";
+        desc = "Steps of Tradition";
+        cards = `
+          <div class="modal-card"><img src="images/jk.jpg" alt="Rouf, Jammu & Kashmir"><h4>Jammu & Kashmir – Rouf</h4><p>Women’s group dance during Eid and spring.</p></div>
+          <div class="modal-card"><img src="images/bhangda.jpg" alt="Bhangra & Giddha, Punjab"><h4>Punjab – Bhangra & Giddha</h4><p>Energetic harvest dances by men and women.</p></div>
+          <div class="modal-card"><img src="images/nati.jpg" alt="Nati, Himachal Pradesh"><h4>Himachal Pradesh – Nati</h4><p>Kullu folk dance with graceful circular steps.</p></div>
+          <div class="modal-card"><img src="images/chholiya.jpg" alt="Chholiya, Uttarakhand"><h4>Uttarakhand – Chholiya</h4><p>Traditional sword dance at weddings for luck.</p></div>
+          <div class="modal-card"><img src="images/phag.jpg" alt="Phag & Dhamal, Haryana"><h4>Haryana – Phag & Dhamal</h4><p>Holi and harvest celebrations with lively rhythms.</p></div>
+          <div class="modal-card"><img src="images/kathak.jpg" alt="Kathak, Uttar Pradesh"><h4>Uttar Pradesh – Kathak</h4><p>Classical storytelling dance with spins and abhinaya.</p></div>
+          <div class="modal-card"><img src="images/ghoomar.jpg" alt="Ghoomar & Kalbeliya, Rajasthan"><h4>Rajasthan – Ghoomar & Kalbeliya</h4><p>Women’s swirling circles; serpent-like folk moves.</p></div>
+          <div class="modal-card"><img src="images/chhau.jpg" alt="Gaudiya Nritya & Chhau, West Bengal"><h4>West Bengal – Gaudiya Nritya & Chhau</h4><p>Devotional classical form and martial mask dance.</p></div>
+          <div class="modal-card"><img src="images/odissi.jpg" alt="Odissi, Odisha"><h4>Odisha – Odissi</h4><p>Temple dance famed for sculpturesque tribhangi poses.</p></div>
+          <div class="modal-card"><img src="images/jat.jpg" alt="Jat-Jatin, Bihar"><h4>Bihar – Jat-Jatin</h4><p>Folk duet about rural love and hardships.</p></div>
+          <div class="modal-card"><img src="images/paika.jpg" alt="Paika & Chhau, Jharkhand"><h4>Jharkhand – Paika & Chhau</h4><p>Martial weapon dance and ritual tribal performance.</p></div>
+          <div class="modal-card"><img src="images/garba.jpg" alt="Garba & Dandiya Raas, Gujarat"><h4>Gujarat – Garba & Dandiya Raas</h4><p>Navratri circles with claps and rhythmic sticks.</p></div>
+          <div class="modal-card"><img src="images/lavani.jpg" alt="Lavani & Tamasha, Maharashtra"><h4>Maharashtra – Lavani & Tamasha</h4><p>Fast dholki beats and folk theatre flair.</p></div>
+          <div class="modal-card"><img src="images/fugadi.jpg" alt="Fugdi & Dhalo, Goa"><h4>Goa – Fugdi & Dhalo</h4><p>Women’s devotional and social circle dances.</p></div>
+          <div class="modal-card"><img src="images/kathakali.jpg" alt="Kathakali & Mohiniyattam, Kerala"><h4>Kerala – Kathakali & Mohiniyattam</h4><p>Elaborate dance-drama and soft lasya movements.</p></div>
+          <div class="modal-card"><img src="images/bharatanatyam.jpg" alt="Bharatanatyam, Tamil Nadu"><h4>Tamil Nadu – Bharatanatyam</h4><p>Classical temple tradition of bhava, raga, tala.</p></div>
+          <div class="modal-card"><img src="images/yakshagana.jpg" alt="Yakshagana, Karnataka"><h4>Karnataka – Yakshagana</h4><p>Vibrant dance-drama blending music, dialogue, mythology.</p></div>
+          <div class="modal-card"><img src="images/kuchipudi.jpg" alt="Kuchipudi, Andhra Pradesh"><h4>Andhra Pradesh – Kuchipudi</h4><p>Expressive dance-drama with brisk footwork and abhinaya.</p></div>
+          <div class="modal-card"><img src="images/perini.jpg" alt="Perini Shiva Thandavam, Telangana"><h4>Telangana – Perini Shiva Thandavam</h4><p>Ancient warrior trance dance dedicated to Shiva.</p></div>
+
+        `;
+      }
+      else if(type === "Music of India") {
+        title = "Music of India";
+        desc = "Melodies of Tradition";
+        cards = `
+          <div class="modal-card"><img src="images/hindustani.jpg"><h4>Hindustani Classical</h4><p>North Indian ragas with rich improvisations.</p></div>
+          <div class="modal-card"><img src="images/carnatic.jpg"><h4>Carnatic Classical</h4><p>South Indian kritis rooted in devotion.</p></div>
+          <div class="modal-card"><img src="images/folk.jpg"><h4>Folk Music</h4><p>Regional songs reflecting culture and festivals.</p></div>
+          <div class="modal-card"><img src="images/devotional.jpg"><h4>Devotional Music</h4><p>Bhajans, kirtans and qawwalis of faith.</p></div>
+          <div class="modal-card"><img src="images/semi.jpg"><h4>Semi-Classical</h4><p>Ghazals, thumris and light ragas.</p></div>
+          <div class="modal-card"><img src="images/film.jpg"><h4>Film Music</h4><p>Bollywood and regional melodies blending styles.</p></div>
+
+        `;
+      }
+      else if(type === "Arts of India") {
+        title = "Arts Of India";
+        desc = "Colors that Speak";
+        cards = `
+          <div class="modal-card"><img src="images/madhubani.jpg"><h4>Madhubani</h4><p>Folk art of Bihar with bold colors and patterns.</p></div>
+          <div class="modal-card"><img src="images/warali.jpg"><h4>Warli</h4><p>Maharashtra tribal art with stick figures.</p></div>
+          <div class="modal-card"><img src="images/pattachitra.jpg"><h4>Pattachitra</h4><p>Cloth paintings of Odisha with mythological stories.</p></div>
+          <div class="modal-card"><img src="images/tanjore.jpg"><h4>Tanjore</h4><p>Tamil Nadu devotional art with gold foil work.</p></div>
+          <div class="modal-card"><img src="images/phad.jpg"><h4>Phad</h4><p>Rajasthani scroll painting narrating folk tales.</p></div>
+          <div class="modal-card"><img src="images/kalighat.jpg"><h4>Kalighat</h4><p>Bold, simple paintings from Bengal with social themes.</p></div>
+          <div class="modal-card"><img src="images/kalamkari.jpg"><h4>Kalamkari</h4><p>Hand-painted or block-printed cloth art of Andhra & Telangana.</p></div>
+          <div class="modal-card"><img src="images/cheriyal.jpg"><h4>Cheriyal Scroll</h4><p>Telangana scroll paintings used for storytelling.</p></div>
+          <div class="modal-card"><img src="images/gond.jpg"><h4>Gond Art</h4><p>Madhya Pradesh tribal painting with dots and lines.</p></div>
+
+        `;
+      }
+      else if(type === "Indian Culture") {
+        title = "Indian Culture";
+        desc = "Unity in Diversity";
+        cards = `
+          <div class="modal-card"><img src="images/ganapati.jpg"><h4>Ganpati Utsav</h4><p>Grand celebration of Lord Ganesha, especially in Maharashtra.</p></div>
+          <div class="modal-card"><img src="images/navratri.jpg"><h4>Navratri</h4><p>Nine nights of Garba, Dandiya, and devotion to Goddess Durga.</p></div>
+          <div class="modal-card"><img src="images/jagannath.jpg"><h4>Jagannath Rath Yatra</h4><p>World-famous chariot festival of Lord Jagannath at Puri, Odisha.</p></div>
+          <div class="modal-card"><img src="images/amarnath.jpg"><h4>Amarnath Yatra</h4><p>Pilgrimage to the sacred Amarnath cave dedicated to Lord Shiva.</p></div>
+          <div class="modal-card"><img src="images/pandharpur.jpg"><h4>Pandharpur Wari</h4><p>Devotional march of Varkaris to Pandharpur in honor of Lord Vitthal.</p></div>
+          <div class="modal-card"><img src="images/kumbhmela.jpg"><h4>Kumbh Mela</h4><p>Largest spiritual gathering in Prayagraj, Haridwar, Nashik, and Ujjain.</p></div>
+          <div class="modal-card"><img src="images/diwali.jpg"><h4>Diwali</h4><p>Festival of Lights symbolizing victory of good over evil.</p></div>
+          <div class="modal-card"><img src="images/holi.jpg"><h4>Holi</h4><p>Festival of colors celebrating love, unity, and spring.</p></div>
+          <div class="modal-card"><img src="images/chhath.jpg"><h4>Chhath Puja</h4><p>Festival dedicated to the Sun God, observed in Bihar and UP.</p></div>
+          <div class="modal-card"><img src="images/baishakhi.jpg"><h4>Baisakhi</h4><p>Harvest festival of Punjab and Sikh New Year.</p></div>
+          <div class="modal-card"><img src="images/onam.jpg"><h4>Onam</h4><p>Kerala’s harvest festival with boat races, pookalams, and feasts.</p></div>
+          <div class="modal-card"><img src="images/makar.jpg"><h4>Makar Sankranti</h4><p>Kite flying and harvest celebrations across India.</p></div>
+          <div class="modal-card"><img src="images/bihu.jpg"><h4>Bihu</h4><p>Assam’s harvest festival with traditional dance and songs.</p></div>
+          <div class="modal-card"><img src="images/lohri.jpg"><h4>Lohri</h4><p>Punjab’s bonfire festival marking the end of winter.</p></div>
+          <div class="modal-card"><img src="images/janmashtami.jpg"><h4>Janmashtami</h4><p>Birthday of Lord Krishna celebrated with Dahi Handi and Bhajans.</p></div>
+          <div class="modal-card"><img src="images/raksha.jpg"><h4>Raksha Bandhan</h4><p>Festival of brother-sister bond with sacred rakhi thread.</p></div>
+          <div class="modal-card"><img src="images/ramnavami.jpg"><h4>Ram Navami</h4><p>Celebration of Lord Rama’s birth with devotion and Ramayana recitals.</p></div>
+          <div class="modal-card"><img src="images/mahashivratri.jpg"><h4>Maha Shivaratri</h4><p>Night dedicated to Lord Shiva with fasting and prayers.</p></div>
+          <div class="modal-card"><img src="images/karwachauth.jpg"><h4>Karva Chauth</h4><p>Married women fast for the well-being of their husbands.</p></div>
+          <div class="modal-card"><img src="images/eid.jpg"><h4>Eid</h4><p>Festival of harmony celebrated with prayers and feasts.</p></div>
+          <div class="modal-card"><img src="images/christmas.jpg"><h4>Christmas</h4><p>Celebration of the birth of Jesus Christ with joy and sharing.</p></div>
+          <div class="modal-card"><img src="images/guruparv.jpg"><h4>Guru Nanak Jayanti</h4><p>Birth anniversary of Guru Nanak celebrated with processions and hymns.</p></div>
+          `;
+        }
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalDesc").innerText = desc;
+      document.getElementById("modalCards").innerHTML = cards;
+
+      document.getElementById("infoModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("infoModal").style.display = "none";
+    }
+    window.addEventListener("click", function(e) {
+  const modal = document.getElementById("infoModal");
+  if(modal && e.target === modal) modal.style.display = "none";
+});
+  </script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

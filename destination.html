@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinations - Explore India</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="destination-page">
+      <nav class="navbar">
+  <div class="logo">
+    <a href="index.html">Explore India</a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+
+    <li class="dropdown">
+      <a href="#">India Special ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="india-food.html">Travel & Food</a></li>
+        <li><a href="historical-places.html">Historical Places</a></li>
+        <li><a href="indian-culture.html">Indian Culture</a></li>
+      </ul>
+    </li>
+
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="destination-page">
+  <div class="destination-grid">
+    <div class="destination-card" onclick="openDestinationModal(0)">
+      <img src="images/india-gate.jpg"alt="India Gate " />
+      <h3> India Gate</h3>
+      <p> Delhi</p>
+    </div>
+      <div class="destination-card" onclick="openDestinationModal(1)">
+      <img src="images/Humayus Tomb.jpg"alt=" Humayu's Tomb" />
+      <h3> Humayu's Tomb</h3>
+      <p> Delhi</p>
+    </div>
+ <div class="destination-card" onclick="openDestinationModal(2)">
+      <img src="images/musore palace.jpg" alt="Mysore Palace" />
+      <h3>Mysore Palace</h3>
+      <p> Mysore, Karnataka</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(3)">
+      <img src="images/tajmahal.jpg" alt="Taj Mahal" />
+      <h3>Taj Mahal</h3>
+      <p>Agra, Delhi</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(4)">
+      <img src="images/Ch.Shivaji terminus.jpg" alt="CST Station" />
+      <h3> Chatrapati Shivaji Maharaj Terminus</h3>
+      <p>Mumbai, Maharashtra</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(5)">
+      <img src="images/ganga-arati.jpg" alt="Ganga Aarti" />
+      <h3>Ganga Aarti</h3>
+      <p>Varanasi, Uttar Pradesh</p>
+    </div>
+     <div class="destination-card" onclick="openDestinationModal(6)">
+      <img src="images/lotus temple.jpg" alt="Lotus Temple" />
+      <h3>Lotus Temple</h3>
+      <p>Delhi</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(7)">
+      <img src="images/gateway of india.jpg" alt="Gateway of India" />
+      <h3>Gateway of India</h3>
+      <p>Delhi</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(8)">
+      <img src="images/palace of wind.jpg" alt="Palace of Wind" />
+      <h3>Palace of Wind</h3>
+      <p>Jaipur, Rajasthan</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(9)">
+      <img src="images/jak mahel.jpg" alt="Palace of Wind" />
+      <h3>Jak Mahal</h3>
+      <p>Jaipur, Rajasthan</p>
+    </div>
+      <div class="destination-card" onclick="openDestinationModal(10)">
+      <img src="images/amer fort.jpg" alt="Amer Fort" />
+      <h3>Amer Fort</h3>
+      <p>Jaipur, Rajasthan</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(11)">
+      <img src="images/ajanta cave.jpg" alt="Ajanta Caves" />
+      <h3>Ajanta Caves</h3>
+      <p>Aurangabad, Maharashtra</p>
+    </div>
+     <div class="destination-card" onclick="openDestinationModal(12)">
+      <img src="images/raigad fort.jpg" alt="Raigad Fort" />
+      <h3>Raigad Fort</h3>
+      <p>Raigad, Maharashtra</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(13)">
+      <img src="images/golden temple.jpg" alt="Golden Temple" />
+      <h3>Golden Temple</h3>
+      <p>Amritsar, Punjab</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(14)">
+      <img src="images/charminar.jpg" alt="Charminar" />
+      <h3>Charminar</h3>
+      <p>Hyderabad, Telangana</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(15)">
+      <img src="images/konark.jpg" alt="Konark Sun Temple" />
+      <h3>Konark Sun Temple</h3>
+      <p>Konark, Odisha</p>
+    </div>
+     <div class="destination-card" onclick="openDestinationModal(16)">
+      <img src="images/goa.jpg" alt="Goa Beach" />
+      <h3>Goa Beach</h3>
+      <p>Goa</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(17)">
+      <img src="images/tanjavar.jpg" alt="Chola Temple" />
+      <h3>Chola Temple</h3>
+      <p>Thanjavar, Tamil Nadu</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(18)">
+      <img src="images/redfort.jpg" alt="Red Fort" />
+      <h3>Red Fort</h3>
+      <p>Delhi</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(19)">
+      <img src="images/pond.jpg" alt="Stepped Tank" />
+      <h3>Stepped Tank</h3>
+      <p>Hampi, Karnataka</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(20)">
+      <img src="images/jatayu.jpg" alt="Jatayu statue" />
+      <h3>Jatayu Statue</h3>
+      <p>Kollam, Kerala</p>
+    </div>
+    <div class="destination-card" onclick="openDestinationModal(21)">
+      <img src="images/adalaj.jpg" alt="Adalaj Stepwell" />
+      <h3>Adalaj Stepwell</h3>
+      <p>Gujarat</p>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="destination-modal" id="destinationModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeDestinationModal()">&times;</span>
+      <img id="modalImg" src="" alt="Destination" />
+      <h3 id="modalTitle"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <script>
+    const destinations = [
+      {
+        title: "India Gate",
+        img: "images/india-gate.jpg",
+        text: " India Gate, located in New Delhi, is a war memorial built in 1931 to honor the 70,000 Indian soldiers who died fighting for the British Army during World War I. Designed by Sir Edwin Lutyens, it stands 42 meters tall and resembles the Arc de Triomphe in Paris. The structure is made of sandstone and has the names of fallen soldiers inscribed on it. Beneath the arch burns the Amar Jawan Jyoti, an eternal flame symbolizing the nation's gratitude to its soldiers. India Gate is a major tourist attraction and a symbol of national pride."
+      },
+      {
+        title: "Humayu's Tomb",
+        img: "images/Humayus Tomb.jpg",
+        text: "Humayun’s Tomb, located in Delhi, is the grand mausoleum of Mughal Emperor Humayun, built in 1570 by his wife Empress Bega Begum. It is one of the earliest examples of Mughal architecture in India, made of red sandstone and white marble. The tomb is set in a large, beautiful garden with pathways and water channels, symbolizing paradise. It inspired the design of later monuments like the Taj Mahal and is a UNESCO World Heritage Site."
+      },
+      {
+        title: "Mysore Palace",
+        img: "images/musore palace.jpg",
+        text: " The Mysore Palace, located in Mysuru, Karnataka, is one of India’s most magnificent royal palaces. It was built in 1912 for the Wodeyar dynasty and showcases a blend of Indo-Saracenic, Hindu, Muslim, and Gothic architectural styles. The palace is known for its grand halls, intricate carvings, stained glass windows, and beautifully decorated ceilings. At night, it glows with thousands of lights, creating a magical view. Mysore Palace is a major tourist attraction and a symbol of the city’s royal heritage and rich cultural history."
+      },
+      {
+        title: "Taj Mahal",
+        img: "images/tajmahal.jpg",
+        text: " The Taj Mahal, located in Agra, Uttar Pradesh, is one of the most iconic monuments in the world. Built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal, it is a symbol of eternal love. Constructed from white marble, the mausoleum features intricate carvings, beautiful gardens, and a large reflecting pool. Completed in 1653, the Taj Mahal blends Persian, Islamic, and Indian architectural styles. It is a UNESCO World Heritage Site and attracts millions of visitors every year for its beauty and historical significance."
+      },
+      {
+        title: "Chhatrapati Shivaji Terminus",
+        img: "images/Ch.Shivaji terminus.jpg",
+        text: " Chhatrapati Shivaji Maharaj Terminus (CSMT), located in Mumbai, is a historic railway station and a UNESCO World Heritage Site. Built in 1887 during British rule, it was originally named Victoria Terminus and later renamed in honor of Maratha king Chhatrapati Shivaji Maharaj. The station is a fine example of Victorian Gothic Revival architecture blended with Indian influences, featuring grand domes, turrets, pointed arches, and detailed stone carvings. It is one of India’s busiest railway stations and a symbol of Mumbai’s colonial past and vibrant present."
+      },
+      {
+        title: "Ganga Aarti",
+        img: "images/ganga-arati.jpg",
+        text: "The Ganga Aarti in Varanasi is a mesmerizing spiritual ritual held every evening at the Dashashwamedh Ghat on the banks of the River Ganga. Devotees and tourists gather to witness priests in traditional attire perform synchronized rituals with oil lamps, incense, and chants in praise of the holy river. The glowing flames, ringing bells, and devotional music create a magical and divine atmosphere. The aarti is a symbol of devotion, purity, and the deep cultural and religious connection between the people and the Ganga River."
+      },
+      {
+        title: "Lotus Temple",
+        img: "images/lotus temple.jpg",
+        text: "The Lotus Temple in New Delhi is a Bahá'í House of Worship, built in 1986 and shaped like a white marble lotus with 27 petals. It welcomes people of all religions and promotes peace, unity, and silent prayer without idols or rituals. Surrounded by beautiful gardens and pools, it is a major tourist attraction and a symbol of spiritual harmony and modern architecture."
+      },
+      {
+        title: "Gateway of India",
+        img: "images/gateway of india.jpg",
+        text: "The Gateway of India is a famous historical monument located in Mumbai, Maharashtra. Built in 1924,it was constructed to commemorate the visit of King George V and Queen Mary to India in 1911. Overlooking the Arabian Sea, it is a major tourist attraction and an iconic symbol of Mumbai. The structure combines Indo-Saracenic, Islamic, and European architectural styles. It also served as a ceremonial entrance to India for British governors and later marked the departure of British troops in 1948, symbolizing the end of British rule."
+      },
+      {
+        title: "Palace Of Wind",
+        img: "images/palace of wind.jpg",
+        text: " The Palace of Winds, or Hawa Mahal, is a famous monument in Jaipur, built in 1799 by Maharaja Sawai Pratap Singh. Made of red and pink sandstone, it has 953 small windows that let cool air pass through, keeping it breezy inside. Designed for royal women to watch street festivals without being seen, it is a blend of Rajput and Mughal architecture and stands as a symbol of Jaipur’s royal heritage."
+      },
+      {
+        title: "Jak Mahal",
+        img: "images/jak mahel.jpg",
+        text: "The Jal Mahal, meaning Water Palace,is a beautiful palace located in the middle of Man Sagar Lake in Jaipur, Rajasthan. Built in the 18th century by Maharaja Madho Singh, it served as a summer retreat and hunting lodge. The palace features Rajput and Mughal architectural styles and appears to float on the lake, with four of its five stories submerged under water. Surrounded by the Aravalli hills, it offers a stunning view and is a popular spot for tourists and photography." 
+      },
+      {
+        title: "Amer Fort",
+        img: "images/amer fort.jpg",
+        text: " Amer Fort, also known as Amber Fort, is a majestic fort located on a hilltop in Jaipur, Rajasthan. Built in the 16th century by Raja Man Singh, it is known for its grand architecture made of red sandstone and marble. The fort features beautiful courtyards, palaces, temples, and mirror work, especially in the Sheesh Mahal (Mirror Palace). Overlooking Maota Lake, Amer Fort reflects a blend of Rajput and Mughal styles and is a UNESCO World Heritage Site. It is one of Jaipur's most popular tourist attractions."
+      },
+      {
+        title: "Ajanta Caves",
+        img: "images/ajanta cave.jpg",
+        text: "The Ajanta Caves, located in Maharashtra, are a group of 30 rock-cut Buddhist cave monuments dating back to the 2nd century BCE to the 6th century CE. Carved into a horseshoe-shaped cliff, these caves feature stunning sculptures, murals, and paintings that depict the life of Buddha and various Jataka tales. They showcase remarkable craftsmanship and are considered masterpieces of ancient Indian art. Ajanta Caves are a UNESCO World Heritage Site and attract visitors from around the world for their historical and artistic significance."
+      },
+      {
+        title: "Raigad Fort",
+        img: "images/raigad fort.jpg",
+        text: "Raigad Fort, located in Maharashtra, was the capital of Chhatrapati Shivaji Maharaj’s Maratha Empire. Situated on a hilltop, it stands about 2,700 feet above sea level and offers stunning views of the surrounding region. The fort is known for its strong architecture, royal palaces, and historical sites like the queen’s quarters, market area, and Shivaji Maharaj’s samadhi (tomb). Raigad Fort symbolizes Maratha pride and valor and remains an important heritage site and a popular trekking destination today. "
+      },
+      {
+        title: "Golden Temple",
+        img: "images/golden temple.jpg",
+        text: " The Golden Temple, also known as Harmandir Sahib, is the holiest shrine of Sikhism, located in Amritsar, Punjab. Built in the 16th century by Guru Arjan Dev, it is known for its stunning gold-covered structure and peaceful surroundings. The temple is surrounded by a sacred lake called the Amrit Sarovar, where devotees take a holy dip. Open to people of all faiths, it symbolizes equality, peace, and spiritual harmony. The Golden Temple also houses the world’s largest free community kitchen, serving meals to thousands every day."
+      },
+      {
+        title: "Charminar",
+        img: "images/charminar.jpg",
+       text: " The Charminar, located in Hyderabad, Telangana, is a historic monument built in 1591 by Sultan Muhammad Quli Qutb Shah. It is known for its four grand minarets and stunning Indo-Islamic architecture. The structure was built to commemorate the end of a deadly plague and stands as a symbol of the city. Surrounded by bustling markets like Laad Bazaar, the Charminar is a popular tourist attraction and a cultural icon of Hyderabad."
+      },
+      {
+      title: "Konark Sun Temple",
+      img: "images/konark.jpg",
+      text: " The Konark Sun Temple, located in Odisha, is a 13th-century temple dedicated to the Sun God, Surya. Built by King Narasimhadeva I, it is designed in the shape of a giant chariot with 12 intricately carved wheels and seven stone horses. Made of black granite, the temple showcases the brilliance of ancient Indian architecture and sculpture. Though partially in ruins, it remains a UNESCO World Heritage Site and a symbol of India's rich cultural and artistic heritage."
+      },
+      {
+      title: "Goa Beach",
+      img: "images/goa.jpg",
+      text: " Goa beaches are among the most popular tourist attractions in India, known for their scenic beauty, golden sand, and vibrant atmosphere. From the lively Baga and Calangute beaches to the peaceful Palolem and Agonda, each beach offers a unique experience. Visitors enjoy sunbathing, water sports, seafood, and beach parties. The beaches reflect Goa’s blend of Indian and Portuguese culture, making them perfect for relaxation and adventure."
+     },
+     {
+      title: "Chola Temple",
+      img: "images/tanjavar.jpg",
+      text: " The Thanjavur Chola Temple, also known as the Brihadeeswarar Temple, is a magnificent Hindu temple located in Thanjavur, Tamil Nadu. Built by Raja Raja Chola I in the 11th century, it is dedicated to Lord Shiva and is a fine example of Dravidian architecture. The temple features a massive tower (vimana), intricate carvings, and a huge Nandi (bull statue) made of a single stone. It is a UNESCO World Heritage Site and stands as a symbol of the Chola dynasty’s architectural and cultural excellence."
+    },
+    {
+      title: "Red Fort",
+      img: "images/redfort.jpg",
+      text: "The Red Fort, located in Delhi, is a historic fort built by Mughal Emperor Shah Jahan in 1648. Made of red sandstone, it served as the main residence of the Mughal emperors for nearly 200 years. The fort showcases a blend of Persian, Timurid, and Indian architecture with features like the Lahori Gate, Diwan-i-Aam, and Diwan-i-Khas. It is a symbol of India’s rich history and independence, as the Prime Minister hoists the national flag here every Independence Day. The Red Fort is a UNESCO World Heritage Site and a major tourist attraction."
+    },
+    {
+      title: "Stepped Tank",
+      img: "images/pond.jpg",
+      text: "The Stepped Tank at Hampi, located in Karnataka, India, is a stunning example of ancient architecture and water management. Built during the Vijayanagara Empire, this symmetrical tank features perfectly carved granite steps leading down to the water, showcasing the skill and precision of the artisans. Surrounded by temple ruins, the tank was likely used for religious rituals and royal ceremonies. Its geometric beauty and historical significance make it a remarkable symbol of Hampi’s rich cultural heritage and engineering excellence. "
+    },
+    {
+      title: "Jatayu Statue",
+      img: "images/jatayu.jpg",
+      text:"The Jatayu Earth’s Center in Kollam, Kerala, features the world’s largest bird sculpture, depicting the legendary eagle Jatayu from the Ramayana. The massive statue stands on a hilltop where Jatayu is believed to have fallen while trying to save Sita from Ravana. This unique attraction symbolizes bravery and the protection of women. Surrounded by natural beauty, the site also offers adventure activities and stunning views, making it a blend of mythology, art, and tourism."
+    },
+    {
+      title: "Adalaj Stepwell",
+      img: "images/adalaj.jpg",
+      text:" The Adalaj Stepwell, located in Gujarat, is a 15th-century architectural marvel built by Queen Rudabai. This five-story stepwell was designed to store water and provide a cool resting place for travelers. Made of beautifully carved sandstone, it features intricate pillars, floral patterns, and mythological figures that reflect a blend of Hindu and Islamic art. The stepwell is not only a source of water but also a symbol of cultural harmony and architectural brilliance from India’s past."
+    },
+    ];
+    
+function openDestinationModal(index) {
+  const place = destinations[index];
+
+  document.getElementById("modalTitle").innerText = place.title;
+  document.getElementById("modalText").innerText = place.text;
+  document.getElementById("modalImg").src = place.img;
+
+  document.getElementById("destinationModal").style.display = "flex";
+}
+
+function closeDestinationModal() {
+  document.getElementById("destinationModal").style.display = "none";
+}
+</script>
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      nav.classList.toggle("active");
+    });
+  }
+  document.querySelectorAll(".dropdown > a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth <= 1024) {
+        e.preventDefault();
+        this.parentElement.classList.toggle("open");
+      }
+    });
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1024 && nav) {
+      nav.classList.remove("active");
+      document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("open"));
+    }
+  });
+</script>
+
+</body>
+</html>
+
+      

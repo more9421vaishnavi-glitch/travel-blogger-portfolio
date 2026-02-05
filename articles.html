@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Articles | Explore India</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap');
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background:url('images/article-bg.jpg') no-repeat center center/cover;
+      color: #333;
+       line-height: 1.6;
+    }
+    .articles-header{
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to right, #ff9966, #ff5e62);
+      color: white;
+    }
+    .articles-header h1 {
+      margin: 0;
+      font-size: 44px;
+      font-family: "Playfair Display", serif;
+    }
+    .articles-header p {
+      font-size: 18px;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 40px;
+    }
+    .article-card {
+      background:white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .article-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .article-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .article-content {
+      padding: 20px;
+    }
+    .article-content h3 {
+      margin: 0;
+      font-size: 20px;
+      font-family: "Playfair Display", serif;
+    }
+    .article-content p {
+      font-size: 14px;
+      margin: 8px 0;
+    }
+    .read-more {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #ff5e62;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .read-more:hover {
+      background: #e14a4f;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: burlywood;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 900px;
+      max-height: 80vh;
+      width: 90%;
+      overflow-y: auto ;
+      text-align: left;
+      position: relative;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-top: 0;
+      color: #ff5e62;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #333;
+    }
+    .footer {
+      text-align: center;
+      padding: 15px;
+      background: #000;
+      color: white;
+      margin-top: 30px;
+    }
+    
+</style>
+</head>
+<body>
+<body>
+ <nav class="navbar">
+  <div class="logo">
+    <a href="index.html">Explore India</a>
+  </div>
+
+  <div class="menu-toggle" id="menu-toggle">☰</div>
+
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+
+    <li class="dropdown">
+      <a href="#">India Special ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="india-food.html">Travel & Food</a></li>
+        <li><a href="historical-places.html">Historical Places</a></li>
+        <li><a href="indian-culture.html">Indian Culture</a></li>
+      </ul>
+    </li>
+
+    <li><a href="destination.html">Destinations</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- Header -->
+  <header class="articles-header">
+    <h1>Travel Stories & Tips</h1>
+    <p>Explore experiences, ideas, and guides from across India</p>
+  </header>
+
+  <!-- Articles -->
+  <section class="article-grid">
+    <div class="article-card">
+      <img src="images/rajasthan1.jpg" alt="Rajasthan">
+      <div class="article-content">
+        <h3> Rajasthan – A Desert Symphony of Colors and Stories</h3>
+        <p> Rajasthan is unique for its living traditions—camel fairs in Pushkar, stepwells like Chand Baori, desert forts that rise like mirages, and palaces floating on lakes such as Udaipur’s Lake Palace.</p>
+        <a class="read-more" data-title="Rajasthan – A Desert Symphony of Colors and Stories " 
+           data-text="When I first arrived in Rajasthan, it felt like stepping into a painting. The light here has a strange magic; it turns even the simplest walls into golden canvases and the desert sands into waves of fire at sunset. My journey began in Jaipur, where the streets buzzed with rickshaws, bright fabrics, and the sweet smell of jalebis frying in roadside stalls. I remember standing before the Hawa Mahal. It's hundreds of tiny windows caught the morning sun, and I wondered how many untold stories had unfolded behind them.
+          From Jaipur, I traveled to Jodhpur, known as the “Blue City.” Walking through its winding alleys felt like moving through a dream painted entirely in indigo. I climbed to the top of Mehrangarh Fort. Looking down at the blue maze beneath me, I felt both small and infinite, as if the city itself was alive and breathing around me. The fort walls seemed to hum with centuries of battles and legends. Inside, I was drawn to the delicate carvings and quiet courtyards where pigeons cooed softly, breaking the silence of history.
+          Yet in the desert of Jaisalmer, Rajasthan truly captured my heart. Riding a camel into the Thar Desert at sunset is an experience no photograph can capture. The air grew cooler as the sky melted into shades of orange and violet. The desert's silence felt sacred. Later that night, I sat by a fire, listening to folk singers with voices as raw and haunting as the dunes. Above us, the stars sprawled across the sky in numbers I had never seen. It was one of those rare moments when time seemed to stop, and all that mattered was the beauty of being alive right there.
+          Of course, Rajasthan is not just forts and deserts. In Udaipur, often called the “City of Lakes,” I found a softer, more romantic side of the state. The white palaces seemed to float on shimmering waters, and the evenings were filled with boat rides where the city lights reflected like jewels scattered across the lake. I still remember the quiet joy of sipping chai at a rooftop café, watching the sun dip behind the Aravalli hills while the city slowly came alive with music and laughter. What makes Rajasthan unforgettable isn’t just its grandeur; it’s its people. I met a shopkeeper in Jodhpur who insisted I try on a dozen colorful turbans. A family in Jaisalmer welcomed me with endless cups of spiced tea. I found warmth everywhere.
+          The desert may be dry, but the hospitality is rich with traditions of music, food, and storytelling. Rajasthan is a place that lingers with you long after you leave. It’s not just about monuments; it’s about moments. The soft jingle of anklets in a village dance, the earthy aroma of dal-baati-churma served with ghee, the echo of temple bells at dawn. It’s about feeling history’s pulse in every stone and the generosity of spirit in every smile. When I think of Rajasthan now, I don’t just see places; I hear songs, I taste spices, and I feel the desert wind on my face. It reminds me that travel is not just about seeing new landscapes but about letting those landscapes change you from within. ">
+           Read More</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <img src="images/kerala1.jpg" alt="Kerala">
+      <div class="article-content">
+        <h3> Kerala – Where Time Slows with the Backwaters</h3>
+        <p>Kerala, often called “God’s Own Country,” is famed for its serene backwaters, lush green landscapes, Ayurvedic traditions, spice plantations, and graceful art forms like Kathakali and Mohiniyattam. </p>
+        <a class="read-more" data-title=" Kerala – Where Time Slows with the Backwaters" 
+           data-text=" The first thing that struck me about Kerala wasn’t the palm trees or the lush greenery. It was the pace of life. Everything here seems to move more slowly and more softly. It feels like a gentle rhythm that pulls you in and makes you forget the rush of the outside world
+           My journey began in Alleppey, where the backwaters stretch like liquid mirrors reflecting coconut palms and village life. I boarded a traditional houseboat, its thatched roof swaying gently on the water. Within minutes, I felt like I had entered another dimension. The only sounds were the splash of oars, the distant laughter of children playing on the riverbank, and the call of birds swooping across the sky. As we drifted past fishermen casting their nets and women washing clothes on the steps of their homes, I realized the backwaters aren’t just a place; they’re a way of life.
+           Kerala is often called “God’s Own Country,” and I felt that most strongly in Munnar. The road that winds into this hill station is lined with rolling tea plantations. Each hill is blanketed in shades of green so vibrant it almost hurts the eyes. I woke early one morning to watch the mist rise over the tea gardens. The silence was so profound it felt like nature was holding its breath. Sipping fresh tea as the sun broke through the fog was one of the simplest yet most perfect moments of my journey.
+           Then there’s Fort Kochi, a town that feels like a tapestry woven from centuries of history. Chinese fishing nets creak against the waves. Colonial-era buildings echo stories of Portuguese, Dutch, and British footprints. I spent hours wandering its narrow streets, ducking into tiny art cafés, and watching the sunset paint the Arabian Sea in molten gold. That evening, I stumbled upon a Kathakali performance. The dancers, with their painted faces and elaborate costumes, seemed less like performers and more like storytellers from another world.
+           But Kerala is not just about landscapes and history; it’s also about flavors. I’ll never forget the taste of a traditional Sadhya, a vegetarian feast served on a banana leaf. Rice, sambar, avial, thoran—more than a dozen dishes, each bursting with spices, textures, and aromas that danced on my tongue. Eating with my hands, I realized the food here isn’t just about nourishment; it’s about connection: to the land, to tradition, and to the people who prepare it with such love.
+           What touched me most about Kerala was its quiet sense of balance. Life here feels deeply rooted in nature. It shows in the way locals respect the monsoon rains, the way fishermen live by the tides, and the way Ayurveda continues as a living tradition of healing. There’s a harmony between people and their environment that feels rare in today’s fast-paced world.
+           When I think back to Kerala, I don’t just remember the postcard-perfect landscapes. I remember the hush of the backwaters at dusk, the steam rising from a cup of chai in Munnar, the rhythmic beat of drums during a temple festival, and the calm smiles of strangers who made me feel at home.
+           Kerala doesn’t shout for your attention; it whispers, gently but deeply. If you listen closely, it will leave an imprint on your heart long after you’ve gone.">
+           Read More</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+      <img src="images/kashmir1.jpg" alt="Kashmir">
+      <div class="article-content">
+        <h3> Kashmir – A Valley Woven in Silence and Song</h3>
+        <p> Kashmir, known as “Paradise on Earth,” is celebrated for its snow-capped Himalayas, blooming tulip gardens, serene Dal Lake with shikaras, and rich handicrafts like pashmina and carpets. </p>
+        <a class="read-more" data-title=" Kashmir – A Valley Woven in Silence and Song"
+           data-text="They say if there is paradise on earth, it is here. I didn’t fully believe that until I stood on the banks of Dal Lake at sunrise. The water was still, like a mirror, reflecting the snowy peaks of the Himalayas. Shikaras, those slender, hand-carved boats, glided across the lake in complete silence, except for the occasional call of a boatman offering saffron, flowers, or the sweetest kahwa tea. It was one of those rare mornings when the world feels softer, almost too beautiful to be real.
+           Srinagar, with its Mughal gardens and wooden houseboats, was my first introduction to Kashmir. Walking through Shalimar Bagh, I could almost picture emperors strolling along the fountains centuries ago. The air smelled faintly of blooming tulips and earth after rain. But it was the evenings on Dal Lake that left a mark on my memory. I watched the sun sink into hues of rose and orange while the city lights flickered awake, their reflections dancing on the water.
+           From Srinagar, I traveled to Gulmarg, a place where the earth feels closer to the sky. Rolling meadows stretched endlessly, covered with wildflowers, while snow peaks stood tall in the distance like silent guardians. I took the cable car up the mountain, the famous Gulmarg Gondola. When I stepped out, the wind hit me with a kind of purity I’d never felt before. The world below looked impossibly small, and all I could hear was the sound of my own breath and the crunch of snow underfoot.
+           Pahalgam, on the other hand, felt like a page from a storybook. Rivers rushed with icy clarity, pine forests whispered with the wind, and ponies trotted along narrow trails leading to tiny mountain villages. One afternoon, I sat by the Lidder River, dipping my hands into its freezing waters, and thought about how time seems to stretch differently here. Hours slipped by unnoticed, carried away by the river’s flow.
+           But Kashmir isn’t just about landscapes—it’s about the warmth of its people. I’ll never forget the family that invited me into their home in a small village near Anantnag. They served me steaming plates of Rogan Josh, freshly baked bread from a tandoor, and endless cups of kahwa spiced with saffron and almonds. We didn’t share a common language, yet their hospitality spoke louder than words. It reminded me that even in the heart of mountains that have seen so much history and conflict, kindness still thrives like spring blossoms after a harsh winter.
+           Kashmir touched me in ways I didn’t expect. Yes, it dazzles the eyes with snowy peaks, alpine meadows, and lakes that seem like glass. But more than that, it stirs something inside—a longing for simplicity, for silence, for connection. It teaches you to slow down, to listen to the sound of flowing rivers, to watch how sunlight plays on snowy slopes, and to sip tea slowly while gazing at mountains older than time.
+           When I think of Kashmir now, I don’t just remember the sights—I remember the stillness, the taste of saffron on my tongue, the warmth of a fire in a wooden houseboat, and the haunting beauty of a valley that sings softly but forever in your memory.">
+           Read More</a>
+      </div>
+    </div>
+
+    <div class="article-card">
+          <img src="images/ladakh.jpg" alt=" Ladakh">
+          <div class="article-content">
+          <h3> Ladakh – Where the Mountains Teach You Silence</h3>
+          <p> Ladakh, the “Land of High Passes,” is renowned for its dramatic landscapes of barren mountains and crystal lakes, ancient monasteries, and a vibrant mix of Tibetan-Buddhist culture.</p>
+          <a class="read-more" data-title="Ladakh – Where the Mountains Teach You Silence " 
+           data-text="Nothing quite prepares you for the first sight of Ladakh from an airplane window. The Himalayas rise like giants, their snow-covered peaks piercing the sky, and suddenly the world below seems more like a painting than reality. It is raw, vast, and untouched. As I stepped off the plane in Leh, the thin mountain air filled my lungs with a mix of excitement and awe.
+           Ladakh is not a place you simply see; it’s a place you feel deeply. On my first morning, I wandered through Leh’s narrow streets, where prayer flags waved above me in bright reds, blues, and yellows. The sound of monks chanting floated from a nearby monastery, while shopkeepers smiled warmly, offering butter tea or apricot jam. Time felt slower here, stretched by the rhythm of mountain life.
+           Driving out of Leh, the landscape changed dramatically with every turn. One moment, I crossed dusty valleys where the Indus River shimmered like a silver ribbon. Next, I wound through passes where snow still lingered quietly. At Khardung La, one of the world’s highest motorable passes, I stood breathless, not just from the altitude but from the sheer size of the mountains. Surrounded by peaks that seemed eternal, I felt both small and incredibly alive.
+           Then came Pangong Lake—a place so surreal it hardly feels real. The water stretched endlessly, changing colors from turquoise to deep blue to emerald green as the day passed. Standing on the shore, with the wind whipping across my face and the prayer flags rustling nearby, I felt a strong sense of peace. There are moments when nature silences all thoughts, and for me, Pangong was one of those moments.
+           In contrast, Nubra Valley felt warmer, both in climate and spirit. Crossing the dramatic dunes of Hunder on the back of a double-humped Bactrian camel was surreal. Desert sands framed by snow-capped mountains surrounded me. At Diskit Monastery, I gazed up at the towering statue of Maitreya Buddha, his calm face overlooking the valley as if blessing every traveler who passed through. It was humbling to stand so small before something so timeless.
+           What struck me most about Ladakh was not just the landscapes but the resilience of its people. Life here is tough, carved out of high-altitude terrain where winters are harsh. Yet every smile I encountered was genuine, and every act of kindness felt heartfelt. In a small village, I shared a simple meal of momos and thukpa with a family, their laughter filling the room warmer than the stove itself.
+           Ladakh teaches you humility. It strips away noise, distraction, and rush. In the vast silence of its valleys, you begin to hear your own thoughts more clearly. In its monasteries, you discover the power of stillness. And in its endless skies, you catch a glimpse of how vast the world truly is.
+           When I think of Ladakh now, I don’t just remember the dramatic mountains and lakes. I recall the taste of butter tea, the flutter of prayer flags against a cobalt sky, and the way the Milky Way lit up the night like a celestial river. Ladakh isn’t just a journey across land; it’s a journey inward, a reminder that sometimes silence speaks louder than words. ">
+           Read More</a>
+      </div>
+      </div>
+           <div class="article-card">
+           <img src="images/andaman.jpg" alt="Andaman">
+           <div class="article-content">
+           <h3>Andaman – Where the Ocean Writes Its Own Poetry</h3>
+           <p>The Andaman Islands are a tropical paradise known for their turquoise waters, coral reefs, white-sand beaches, and historical significance with the Cellular Jail.  </p>
+           <a class="read-more" data-title= "Andaman – Where the Ocean Writes Its Own Poetry" 
+           data-text="When I first arrived in the Andaman Islands, the air felt different. It was warm, salty, and carried the scent of the sea. As the boat took me across turquoise waters toward Havelock Island, I leaned over the edge. I was mesmerized by how the ocean changed colors, from crystal-clear aquamarine to deep sapphire blue. The journey felt less like travel and more like being gently transported to another world.
+           The beaches here are like something from a dream. Radhanagar Beach, often named one of the best in Asia, made time stand still for me. I walked barefoot along the shore, feeling the fine white sand cool on my feet while gentle waves lapped at the beach. That evening's sunset was unlike anything I had ever seen. The sky burst with fiery oranges and pinks, reflecting perfectly on the endless sea. I stood still for a long time, watching the horizon blur until it was hard to tell where the ocean ended and the sky began.
+           But the Andamans aren't just about relaxing days at the beach; they invite you to dive into a hidden world. While snorkeling off Elephant Beach, I was amazed by the explosion of color beneath the surface. Coral gardens swayed like living sculptures, schools of fish shimmered together, and occasionally, a curious turtle glided past me effortlessly. It felt like sneaking a peek into a secret universe that few get to see.
+           Port Blair, the capital, offers a different kind of beauty. It serves as a poignant reminder of history. The Cellular Jail, once a colonial prison, still resonates with the struggles of India’s freedom fighters. Walking through its silent corridors, I felt the weight of the stories etched into its walls. It was humbling to think that these islands, now so peaceful, once hosted unimaginable suffering.
+           One of my favorite memories was taking a ferry to Neil Island, which is smaller and quieter than Havelock. Life here felt even slower. Fishermen returned with their catch at dawn, children played cricket on sandy stretches, and locals greeted me with warm smiles. Watching the sunrise at Sitapur Beach, as the first rays painted the sky golden while the waves whispered against the rocks, was pure magic.
+           And then there was the food—simple, fresh, and unforgettable. Plates of grilled fish, coconut curries, and tropical fruits tasted like sunshine. Each meal felt like a celebration of the sea, abundance, and island life connected to nature.
+           What moved me most about the Andamans was how they combine raw beauty with quiet humility. These islands don’t demand attention; they invite it gently through the soft sound of waves, the sway of palm trees, and the kindness of people living in harmony with the ocean.
+           Now, when I think of the Andamans, I remember more than just their picture-perfect beaches. I recall floating in warm waters under a sky full of stars, hearing the soft waves even in my sleep, and feeling fully present in every moment. The islands are not just a destination; they are a pause, a breath, a reminder of how vast and healing the sea can be. ">
+           Read More</a>
+      </div>
+      </div>
+          <div class="article-card">
+          <img src="images/kaas.jpg" alt=" Kaas Plateau">
+          <div class="article-content">
+          <h3> Kaas Plateau – A Symphony of Wildflowers in Bloom</h3>
+          <p> The Kaas Plateau, called the *“Valley of Flowers of Maharashtra,”* is a UNESCO World Natural Heritage Site, famous for its seasonal bloom of over 850 rare flower species. </p>
+          <a class="read-more" data-title="Kaas Plateau – A Symphony of Wildflowers in Bloom" 
+          data-text=" Some places don’t just welcome you—they take your breath away at first sight. For me, Kaas Plateau was one of those places. As I drove up the winding road from Satara, the air grew cooler, carrying with it the faint scent of earth and rain. It was late monsoon, the season when Kaas comes alive, and I knew I was about to witness something magical.
+          When I finally stepped onto the plateau, it felt as though nature had rolled out a carpet just for me. Stretching as far as the eye could see was a riot of wildflowers—pinks, purples, yellows, and whites swaying gently in the breeze. The land itself seemed to pulse with color, like a living canvas painted fresh by the season. I remember standing still, completely stunned, as if I had stumbled into a secret that nature only shares with those who take the time to look.
+          What makes Kaas so unique is that it’s not a manicured garden, but a wild one. Every step revealed something new: a cluster of Smithia flowers glowing like drops of sunshine, tiny orchids hiding shyly in the grass, delicate blue Karvy blossoms that bloom only once in eight years. Butterflies flitted everywhere, adding their own dance to the spectacle. It wasn’t just beauty—it was biodiversity in its purest form, fragile and precious.Walking through the plateau, I noticed that the silence here is never truly silent. The hum of insects, the rustle of grass, the distant call of birds—all of it wove together into a kind of natural symphony. The clouds rolled low and heavy, at times wrapping the plateau in mist so thick it felt like walking through a dream. And then, as the mist lifted, the flowers seemed to glow brighter, as though they had been waiting just for that moment to show themselves.
+          Kaas isn’t about grandeur or scale—it’s about detail. It’s about kneeling to see the dew trembling on a petal, or watching how a single patch of land can hold dozens of species, each more delicate than the last. I realized that to experience Kaas truly, you need patience. You need to slow down, to let the flowers come to you, to notice the small wonders that could easily go unseen.
+          Of course, the plateau is fragile, and that’s what makes it even more precious. The locals are deeply protective of it, and rightly so—it’s a UNESCO World Natural Heritage site, after all. Walking along the marked paths, I felt grateful that efforts were being made to preserve this ecological wonder for future generations.
+          When I think back to Kaas now, I don’t just remember the flowers—I remember the feeling. The sense of standing in a place untouched by hurry, where nature still reigns with quiet authority. It reminded me that beauty doesn’t always shout; sometimes, it whispers, waiting for us to pause and listen.
+          Kaas Plateau isn’t just a destination—it’s an experience of humility. It teaches you how small we are in the grand design of nature, and how much joy there is in simply stopping to admire a flower in bloom. If paradise had a season, for me, it would be Kaas in the monsoon.">
+          Read More</a>
+      </div>
+      </div>
+           <div class="article-card">
+           <img src="images/meghalaya.jpg" alt="Meghalaya">
+           <div class="article-content">
+           <h3>Meghalaya – Land of Living Root Bridges </h3>
+           <p>Meghalaya, the “Abode of Clouds,” is known for its living root bridges, rolling hills, Asia’s cleanest village Mawlynnong, and some of the world’s heaviest rainfall in Cherrapunji and Mawsynram. </p>
+           <a class="read-more" data-title="Meghalaya – Land of Living Root Bridges " 
+           data-text=" Some places feel less like destinations and more like discoveries, and Meghalaya is one of them. As the rains swept across the rolling hills, I found myself wandering into a world that seemed carved from mist and magic. The clouds hung low, rivers gushed with newfound energy, and every corner of this land whispered stories of nature’s patience and power.
+           In Cherrapunji, I walked along paths that wound through forests so lush they seemed eternal. And then, there it was—the living root bridge. Twisting roots of ancient rubber trees stretched across the stream, woven by generations of hands and time. To stand upon it was to feel history alive under my feet, a reminder of how humans and nature can work not against each other, but together.
+           Everywhere in Meghalaya, the rain is not an interruption—it’s the rhythm of life. Villages glisten with waterfalls tumbling from cliffs, caves echo with dripping secrets, and valleys bloom in shades of green that no paint could capture. The people here welcome you with warmth, their songs rising with the rain, their stories carrying the spirit of the hills.
+           When I think of Meghalaya now, I don’t just recall the rain or the bridges—I remember the feeling of being part of a landscape still wild, still pure, still generous. It is not just a place you visit, but one you carry with you, long after you leave.">
+           Read More</a>
+      </div>
+      </div>
+           <div class="article-card">
+           <img src="images/mumbai.jpg" alt="Mumbai">
+           <div class="article-content">
+           <h3> Mumbai – A City that Never Sleeps</h3>
+           <p> Mumbai, the City of Dreams is India’s financial capital, famous for Bollywood, the Gateway of India, Marine Drive, and its nonstop energy that blends tradition with modern glamour. </p>
+           <a class="read-more" data-title=" Mumbai – A City that Never Sleeps" 
+           data-text=" Some cities greet you gently, but Mumbai rushes into your life with the energy of a thousand beating hearts. The moment I stepped out into its streets, I felt the pulse of a city that is always on the move, always alive. The air was thick with the scent of roasting corn on the beach, street-side vada pavs sizzling in oil, and the salty breeze drifting in from the Arabian Sea.
+           At Marine Drive, as the waves crashed against the stones, I watched the sun melt into the horizon, painting the sky with shades of gold and crimson. Around me, couples sat hand in hand, friends laughed freely, joggers ran past with determination—each one part of Mumbai’s endless story. By nightfall, the promenade glittered like a queen’s necklace, reminding me why this city is called the “Maximum City.”
+           Walking through Colaba, I felt history and modernity colliding in the most beautiful way. The iconic Gateway of India stood tall against the sea, while just nearby, the bustling lanes sold everything from antiques to cutting chai. And then there was Dharavi—often misunderstood, but inside, it throbbed with creativity and resilience, a world where every corner had a craft, a skill, a dream.
+           But Mumbai’s soul lies not in its monuments, but in its people. In the packed local trains where strangers become companions for a short journey. In the dabbawalas who deliver meals with clockwork precision. In the spirit that rises each time the city faces challenges, proving that nothing can dim its light for long.
+           Mumbai is chaos, but it is also rhythm. It is struggle, but it is also hope. When I think of Mumbai now, I don’t just remember the skyline or the sea—I remember the feeling of being swept into a current of dreams, where everyone is chasing something, and somehow, the city makes room for them all.
+           Mumbai isn’t just a city. It’s an emotion. And once you’ve felt it, it stays with you forever.">
+           Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="articleModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 My Travel Blog | Created with love for Indian wanderers</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const modal = document.getElementById("articleModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalText = document.getElementById("modalText");
+    const closeModal = document.getElementById("closeModal");
+
+    document.querySelectorAll(".read-more").forEach(btn => {
+      btn.addEventListener("click", () => {
+        modalTitle.textContent = btn.getAttribute("data-title");
+        modalText.textContent = btn.getAttribute("data-text");
+        modal.style.display = "flex";
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
